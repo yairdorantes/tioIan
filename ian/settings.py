@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 CORS_ORIGIN_ALLOW_ALL = True
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:5500']
+# CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:5500']
+CSRF_TRUSTED_ORIGINS = ["https://tioian-production.up.railway.app/"]
 
 # Application definition
 
@@ -135,5 +136,4 @@ STATIC_URL = 'static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-CSRF_TRUSTED_ORIGINS = ["https://tioian-production.up.railway.app/"]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
