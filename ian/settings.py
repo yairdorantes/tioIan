@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-%9jvj3#d2(+f7k@n61e&pgu^(^$b1()lms&$k#45l5c@isv5v=
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["https://tioian-production.up.railway.app"]
 CORS_ORIGIN_ALLOW_ALL = True
 # CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:5500']
-CSRF_TRUSTED_ORIGINS = ["https://tioian-production.up.railway.app/"]
 
 # Application definition
 
@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'corsheaders',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
