@@ -2,6 +2,8 @@ from django.views import View
 import json
 from django.http import JsonResponse
 from django.contrib.auth import authenticate
+from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
 
 class my_login(View):
     def get(self,rquest):
@@ -25,7 +27,14 @@ class my_signup(View):
         return JsonResponse({"message":"success GET signup"})
     
     def post(self, request, *args, **kwargs):
-        return JsonResponse({"message":"success GET signup"})
+        try:
+            jd = json.loads(request.body)
+            user = User.objects.create_user(username=jd['username'], password=jd['password'])
+            user.save()
+            return JsonResponse({'message': 'User created successfully'})
+        except ValidationError as e:
+            return JsonResponse({'message': str(e)}, status=400)
+
 
 
 

@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ["https://tioian-production.up.railway.app"]
 CORS_ORIGIN_ALLOW_ALL = True
 # CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:5500']
-
+# SITE_URL = "https://tioian-production.up.railway.app/"
 # Application definition
 
 INSTALLED_APPS = [
